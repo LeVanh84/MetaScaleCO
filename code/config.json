@@ -1,0 +1,108 @@
+{
+  "master_seed": 2026,
+  "train": {
+    "sizes": [
+      50,
+      100
+    ],
+    "n_per_size": 300,
+    "behavior_budgets": [
+      8,
+      32,
+      128
+    ]
+  },
+  "val": {
+    "n": 100,
+    "count": 64,
+    "tune_budgets": [
+      4,
+      16,
+      64
+    ]
+  },
+  "test": {
+    "tsp100-uniform": {
+      "n": 100,
+      "dist": "uniform",
+      "count": 100,
+      "seed_offset": 1
+    },
+    "tsp200-uniform": {
+      "n": 200,
+      "dist": "uniform",
+      "count": 100,
+      "seed_offset": 2
+    },
+    "tsp100-clustered": {
+      "n": 100,
+      "dist": "clustered",
+      "count": 100,
+      "seed_offset": 3
+    }
+  },
+  "budgets": [
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "seeds_per_instance": 3,
+  "lkh_runs": 10,
+  "voc": {
+    "n_models": 5,
+    "epochs": 25
+  },
+  "grid": {
+    "lambda": [
+      0.0,
+      0.02,
+      0.05,
+      0.1,
+      0.2,
+      0.5
+    ],
+    "beta": [
+      0.0,
+      0.5,
+      1.0,
+      2.0,
+      5.0,
+      10.0,
+      20.0
+    ],
+    "ucb1_c": [
+      0.1,
+      0.3,
+      1.0,
+      3.0,
+      10.0,
+      30.0
+    ]
+  },
+  "stop_taus": [
+    -0.2,
+    -0.1,
+    -0.09,
+    -0.08,
+    -0.07,
+    -0.06,
+    -0.05,
+    -0.04,
+    -0.03,
+    -0.02,
+    0.0,
+    0.05
+  ],
+  "stop_budget": 128,
+  "batch": {
+    "size": 10,
+    "budgets": [
+      8,
+      32
+    ]
+  }
+}
